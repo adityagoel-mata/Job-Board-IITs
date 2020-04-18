@@ -1,0 +1,71 @@
+#opportunities {
+  border: 5px solid #333;
+  background-color: #aaa;
+  border-radius: 20px 20px;
+  margin: 15px 20px 10px 20px;
+  height: 300px;
+  width: 25%;
+  float: left;
+  /* position: relative; */
+  padding: 20px;
+  font-size: xx-large;
+  font-style: initial;
+  text-align: center;
+}
+#latestResearch {
+  border: 5px solid #333;
+  background-color: #aaa;
+  border-radius: 20px 20px;
+  margin: 15px 20px 10px 20px;
+  height: 300px;
+  width: 41%;
+  float: left;
+  padding: 20px;
+  font-size: xx-large;
+  font-style: initial;
+  text-align: center;
+}
+#nirf {
+  border: 5px solid #333;
+  border-radius: 20px 20px;
+  background-color: #aaa;
+  margin: 15px 20px 10px 20px;
+  height: 300px;
+  width: 25%;
+  float: right;
+  padding: 20px;
+  font-size: xx-large;
+  font-style: initial;
+  text-align: center;
+}
+
+/* .career {
+
+} */
+
+#search {
+  border: 5px solid #333;
+  border-radius: 20px 20px;
+  background-color: #aaa;
+  text-align: center;
+  margin: 10px 20px 10px 20px;
+  height: 100px;
+  width: 46%;
+  float: left;
+  padding: 20px;
+  font-size: xx-large;
+  font-style: initial;
+}
+#alumni {
+  border: 5px solid #333;
+  border-radius: 20px 20px;
+  background-color: #aaa;
+  text-align: center;
+  margin: 10px 20px 10px 20px;
+  height: 100px;
+  width: 46%;
+  float: right;
+  padding: 20px;
+  font-size: xx-large;
+  font-style: initial;
+}

@@ -1,0 +1,129 @@
+.sortstrip {
+  background-color: #ccc; 
+  height: 30px;
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+}
+#sorting-option {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 20px;
+  padding-left: 10px;
+  border: solid 2px green;
+  width: 180px;
+}
+#currency-option {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 230px;
+  padding-left: 10px;
+  border: solid 2px green; 
+}
+
+.sorted {
+  /* border: solid 0.1px green; */
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.sorted #searchResultsLabel {
+  font-size: xx-large;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.resultOne {
+  display: table-row;
+  border: solid 0.1px green;
+  width: 78%;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.resultOne .photo {
+  display: table-cell;
+  /* border: solid 0.1px green; */
+  width: 15%;
+}
+
+.resultOne .photo img {
+  display: block;
+  width: 100%;
+  height: 10%; /* 6% when 1 row is there, 8% when 2nd row is there and 10% when third is there. */
+}
+.resultOne .name {
+  display: table-cell;
+  /* border: solid 0.1px green; */
+  width: 50%;
+  vertical-align: top;
+}
+
+.resultOne .name #name {
+  /* border: solid 0.1px green; */
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.resultOne .name a {
+  /* border: solid 0.1px green; */
+  text-decoration: none;
+  color: red;
+  font-size: xx-large;
+}
+.resultOne .name #location {
+  /* border: solid 0.1px green; */
+  color: red;
+  font-size: medium;
+  margin-top: 0px;
+  padding-left: 20px;
+}
+.resultOne .name #available {
+  /* border: solid 0.1px green; */
+}
+
+.resultOne .name #prog1 {
+  display: table-row;
+  /* border: solid 0.1px green; */
+  width: 30%;
+  height: 30px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.resultOne .name #degree1 {
+  display: table-cell;
+  font-size: medium;
+}
+.resultOne .name #vBar {
+  display: table-cell;
+  font-size: 20px;
+}
+.resultOne .name #field1 {
+  display: table-cell;
+  font-size: 10px;
+  vertical-align: top;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.resultOne .feesAndOthers {
+  display: table-cell;
+  border: solid 0.1px green;
+  width: 16%;
+  vertical-align: top;
+}
+
+.resultOne .feesAndOthers #tuitionFeesLabel {
+  margin-top: 0px;
+  padding-left: 20px;
+  font-size: x-large;
+  margin-bottom: 0px;
+  color: red;
+}
+.resultOne .feesAndOthers #tuitionFeesValue {
+  color: red;
+  margin-top: 0px;
+  padding-left: 20px;
+  font-size: x-large;
+}

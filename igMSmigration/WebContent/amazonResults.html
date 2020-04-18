@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="./amazonResults.css">
+  <script type="text/javascript" src="jquery-3.4.1.js"></script>
+  
+</head>
+<body>
+
+    
+    <div class="sortstrip">
+      <select id="sorting-option" name="sorting-option">
+
+        <option value="NIRF">NIRF Overall Ranking</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Fees">Fees (Low to High)</option>
+      </select>
+      <select id="currency-option" name="currency-option">
+        <option value="INR" >INR</option>
+        <option value="CNY" >CNY</option>
+        <option value="EUR" >EUR</option>
+        <option value="GBP" >GBP</option>
+        <option value="USD" >USD</option>
+      </select>
+    </div>
+  
+    <div class="sorted">
+      <p id="searchResultsLabel">SEARCH RESULTS</p> <br>
+    </div>
+
+    <div class="allResults">
+    </div>
+
+    <script src="amazonResults.js"></script>
+  
+</body>
+</html>
