@@ -1,0 +1,118 @@
+.header{
+  background-color: black;
+  padding: 1px;
+  position: relative;
+}
+.heading {
+  margin-left: 50px;
+  color: white;
+}
+#home {
+  cursor: grab;
+}
+#login {
+  color: white; 
+  font-size: 25px; 
+  font-family: cursive;
+  position: absolute; 
+  right: 50px;
+  top: 1px;
+}
+
+.wrapper {
+  background-color: #ccc;
+  margin: 0;
+  border: dotted 2px black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.programme-index, .internship-index, .assistantship-index {
+  display: inline;
+  margin-left: 50px;  
+}
+#programme-button, #internship-button, #assistantship-button {
+  border: none;
+  background: none;
+  color: black;
+  font-size: large;
+}
+
+
+
+.params {
+  padding-top: 0px;
+}
+
+#lookingFor-dropdown, #programme-dropdown, #field-dropdown, #degree-dropdown, #institute {
+  width: 200px;
+  border: solid 2px green;
+}
+
+#fees-range {
+  width: 195px;
+}
+select option[disabled] {
+  display: none;
+}
+
+/* .programme-dropdown {
+  display: none;
+  position: absolute;
+  margin-left: 100px;
+  background-color: #f9f9f9;
+  width: 250px;
+  z-index: 1;
+}
+.programme-options {
+  display: block;
+  margin: 0;
+  width: 500px;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  background: none;
+  color: black;
+  font-size: medium;
+}
+
+.programme-index:hover .programme-dropdown, .internship-index:hover .programme-dropdown  {
+  display: block;
+}
+.programme-dropdown .programme-options:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.BS-dropdown, .Des-dropdown, .Engg-dropdown, .HSS-dropdown, .Mgmt-dropdown {
+  display: none;
+  position: absolute;
+  margin-left: 250px;
+  background-color: #f9f9f9;
+  width: 250px;
+  z-index: 1;
+}
+.BS-field-button, .Des-field-button, .Engg-field-button, .HSS-field-button, .Mgmt-field-button {
+  /* display: block; */
+  /* margin: 0;
+  width: 250px;
+  text-align: left;
+  padding: 10px;
+  border: none;
+  background: none;
+  color: black;
+  font-size: medium;
+}
+.BS-programme:hover .BS-dropdown {display: block; top: 0;}
+.BS-dropdown .BS-field-button:hover {background-color: #000; color: #fff;}
+
+.Des-programme:hover .Des-dropdown {display: block; top: 38px;}
+.Des-dropdown .Des-field-button:hover {background-color: #000; color: #fff;}
+
+.Engg-programme:hover .Engg-dropdown {display: block; top: 76px;}
+.Engg-dropdown .Engg-field-button:hover {background-color: #000; color: #fff;}
+
+.HSS-programme:hover .HSS-dropdown {display: block; top: 114px;}
+.HSS-dropdown .HSS-field-button:hover {background-color: #000; color: #fff;}
+
+.Mgmt-programme:hover .Mgmt-dropdown {display: block; top: 152px;}
+.Mgmt-dropdown .Mgmt-field-button:hover {background-color: #000; color: #fff;} */ 

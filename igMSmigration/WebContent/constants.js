@@ -16,3 +16,7 @@ var MgmtDegrees= ["M.B.A"];
 var CommonDegrees= ["M.Phil", "PGDIIT", "P.hD"];
 
 var defaultSortType = "NIRF Overall Ranking";
+
+/////////////////////////////////// API Key and sample URL's
+var currencyAPIkey = "cef06c0647905298abfa511dd6d28d88";
+// URL: http://www.api.currencylayer.com/live?access_key=cef06c0647905298abfa511dd6d28d88

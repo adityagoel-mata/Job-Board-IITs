@@ -1,0 +1,154 @@
+.sortstrip {
+  background-color: #ccc; 
+  height: 30px;
+  margin-top: 0;
+  padding-top: 0;
+  position: relative;
+}
+#sorting-option {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 20px;
+  padding-left: 10px;
+  border: solid 2px green;
+  width: 180px;
+}
+#currency-option {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 230px;
+  padding-left: 10px;
+  border: solid 2px green; 
+}
+
+.sorted {
+  /* border: solid 0.1px green; */
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.sorted #searchResultsLabel {
+  font-size: xx-large;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.resultOne {
+  display: table-row;
+  border: solid 0.1px green;
+  width: 78%;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.resultOne .photo {
+  display: table-cell;
+  /* border: solid 0.1px green; */
+  width: 15%;
+}
+
+.resultOne .photo img {
+  display: block;
+  width: 100%;
+  height: 10%; /* 6% when 1 row is there, 8% when 2nd row is there and 10% when third is there. */
+}
+.resultOne .name {
+  display: table-cell;
+  /* border: solid 0.1px green; */
+  width: 49%;
+  vertical-align: top;
+}
+
+.resultOne .name #name {
+  /* border: solid 0.1px green; */
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.resultOne .name a {
+  /* border: solid 0.1px green; */
+  text-decoration: none;
+  color: red;
+  font-size: xx-large;
+}
+.resultOne .name #location {
+  /* border: solid 0.1px green; */
+  color: red;
+  font-size: medium;
+  margin-top: 0px;
+  padding-left: 20px;
+}
+.resultOne .name #available {
+  /* border: solid 0.1px green; */
+}
+
+.resultOne .name #prog1, .resultOne .name #prog2, .resultOne .name #prog3, .resultOne .name #prog4, .resultOne .name #prog5, .resultOne .name #prog6 {
+  width: 30%;
+  height: 30px;
+  margin-left: 15px;
+  margin-top: 10px;
+  /* border: solid 1px green; */
+}
+.profDetails {
+  border: solid 0.1px green;
+  width: 100%;
+  height: 10%;
+  margin-top: 0px;
+}
+.profDetails .researchInterests {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 5px;
+  height: 10%;
+}
+
+.name #links {
+  margin-top: -105px;
+  /* border: solid 0.1px green; */
+
+}
+.resultOne .name #links1, .resultOne .name #links2, .resultOne .name #links3, .resultOne .name #links4, .resultOne .name #links5, .resultOne .name #links6  {
+  width: 30%;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 15px;
+  /* border: solid 0.1px green; */
+  opacity: 0;
+}
+
+
+#homepage {
+  margin-left: 0px;
+  font-size: 15px;
+  text-decoration: underline;
+  color: blue;
+}
+#googleScholar {
+  margin-left: 30px;
+  margin-right: 0px; 
+  font-size: 15px;
+  text-decoration: underline;
+  color: blue;
+}
+
+
+.resultOne .feesAndOthers {
+  display: table-cell;
+  border: solid 0.1px green;
+  width: 17%;
+  vertical-align: top;
+}
+
+.resultOne .feesAndOthers #tuitionFeesLabel {
+  margin-top: 0px;
+  padding-left: 20px;
+  font-size: x-large;
+  margin-bottom: 0px;
+  color: red;
+}
+.resultOne .feesAndOthers #tuitionFeesValue {
+  color: red;
+  margin-top: 0px;
+  padding-left: 20px;
+  font-size: x-large;
+}
