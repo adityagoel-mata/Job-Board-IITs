@@ -50,7 +50,7 @@ public class QueriesConstants {
 	return Query;
 	}
 	
-	public String getDetailsQueryJA (JSONArray instiName, String sortType) throws JSONException {
+	public String getDetailsQueryJA (JSONArray instiName, String sortType, int maxFee) throws JSONException {
 		 String sortText = "";
 	     if (sortType.equals("NIRF Overall Ranking")) sortText = "nirf";
 		 else if (sortType.equals("A-Z")) sortText = "\"institute\"";
@@ -58,9 +58,9 @@ public class QueriesConstants {
 
 		String Query = "SELECT \"institute\", fees, location, \"homeLink\", \"imageLocation\" FROM public.institutes WHERE ";
 		for (int i = 0; i<instiName.length()-1; i++) {
-			Query = Query.concat("\"institute\" = '" + instiName.getJSONObject(i).getString("institute").trim() + "' OR ");
+			Query = Query.concat("(\"institute\" = '" + instiName.getJSONObject(i).getString("institute").trim() + "' AND fees <= " + maxFee + ") OR ");
 		}
-		 	Query = Query.concat("\"institute\" = '" + instiName.getJSONObject(instiName.length()-1).getString("institute").trim() + "' ORDER BY " + sortText + ";");
+		 	Query = Query.concat("(\"institute\" = '" + instiName.getJSONObject(instiName.length()-1).getString("institute").trim() + "' AND fees <= " + maxFee + ") ORDER BY " + sortText + ";");
 		return Query;
 	}
 
@@ -89,8 +89,39 @@ public class QueriesConstants {
 		return Query;
 	}
 
+	public String getProfessorsQueryJA(JSONArray instiNamesJASorted, String programme, String field) throws JSONException {
+		String Query = "";
+		String everything = " institute, professor, programme, field, homepage, \"gScholar\", interest1, interest2, interest3, interest4, interest5, interest6, \"offeringInternship\" ";
+		if (!programme.equals("All") && !field.equals("All")) {
+			for (int i = 0; i<instiNamesJASorted.length()-1; i++) {
+				Query += "SELECT" + everything + "," + i + " as ord FROM public.\"prof " + instiNamesJASorted.getJSONObject(i).getString("institute").trim() + "\" WHERE \"field\"= '" + field + "' AND \"offeringInternship\" = TRUE ";
+				Query += "UNION ";
+			}
+			Query += "SELECT" + everything + ", " + Integer.toString(instiNamesJASorted.length()-1) + " as ord FROM public.\"prof " + instiNamesJASorted.getJSONObject(instiNamesJASorted.length()-1).getString("institute").trim() + "\" WHERE \"field\"= '" + field + "' AND \"offeringInternship\" = TRUE ";
+			Query += "ORDER BY ord;";
+		}
+		else if (!programme.equals("All") && field.equals("All")) { //for returning empty array purposefully
+			Query += "SELECT" + everything + ", 1 as ord FROM public.\"prof IIT Gandhinagar\" WHERE \"programme\"= 'All' ;";
+		}
+		return Query;
+	}
 
-
+	public String getJobsQueryJA(JSONArray instiNamesJASorted, String programme, String field) throws JSONException {
+		String Query = "";
+		String everything = " institute, programme, field, job, area, duration, stipend, \"pageLink\", \"jobLink\" ";
+		if (!programme.equals("All") && !field.equals("All")) {
+			for (int i = 0; i<instiNamesJASorted.length()-1; i++) {
+				Query += "SELECT" + everything + "," + i + " as ord FROM public.\"jobs " + instiNamesJASorted.getJSONObject(i).getString("institute").trim() + "\" WHERE \"field\"= '" + field + "' ";
+				Query += " UNION ";
+			}
+			Query += "SELECT" + everything + ", " + Integer.toString(instiNamesJASorted.length()-1) + " as ord FROM public.\"jobs " + instiNamesJASorted.getJSONObject(instiNamesJASorted.length()-1).getString("institute").trim() + "\" WHERE \"field\"= '" + field + "' ";
+			Query += " ORDER BY ord;";
+		}
+		else if (!programme.equals("All") && field.equals("All")) { //for returning empty array purposefully
+			Query += "SELECT" + everything + ", 1 as ord FROM public.\"jobs IIT Gandhinagar\" WHERE \"programme\"= 'All' ;";
+		}
+		return Query;
+	}
 
 }
 

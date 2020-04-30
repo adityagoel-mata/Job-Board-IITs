@@ -1,0 +1,15 @@
+.params {
+  padding-top: 0px;
+}
+
+#purpose-dropdown, #programme-dropdown, #field-dropdown, #degree-dropdown, #institute {
+  width: 200px;
+  border: solid 2px green;
+}
+
+#fees-range {
+  width: 195px;
+}
+select option[disabled] {
+  display: none;
+}

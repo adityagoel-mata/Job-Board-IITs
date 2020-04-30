@@ -24,23 +24,41 @@ public class SortServiceUsingLoop extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String purpose = request.getParameter("purpose");
 		String programme = request.getParameter("programme");
 		String field = request.getParameter("field");
 		String degree = request.getParameter("degree");
 		String sortType = request.getParameter("sortType");
-
+		int maxFee = Integer.parseInt(request.getParameter("maxFee"));
 		daoCodes dao = new daoCodes();
 		dao.connect();
 
 		try {
 			JSONArray instiNamesJA = dao.getInstituteJA(programme, field, degree);
-			JSONArray detailsJA = dao.getDetailsJA(instiNamesJA, sortType);
+			JSONArray detailsJA = dao.getDetailsJA(instiNamesJA, sortType, maxFee);
 			JSONArray instiNamesJASorted = getinstiNamesJASorted(detailsJA);
-			JSONArray allDegreeJA = dao.getAllDegreeJA(instiNamesJASorted, programme, field, degree);
+			
+			if (purpose.equals("Admission")){
+				JSONArray allDegreeJA = dao.getAllDegreeJA(instiNamesJASorted, programme, field, degree); //only if purpose is admission
 			
 				response.setContentType("application/json");
 				String allJSON = "["+instiNamesJA+","+detailsJA+","+allDegreeJA+"]"; //Put both objects in an array of 2 elements
 				response.getWriter().write(allJSON);
+			}
+			else if (purpose.equals("Internship")) {
+				JSONArray professorJA = dao.getProfessorsJA(instiNamesJASorted, programme, field);
+				response.setContentType("application/json");
+				String allJSON = "["+instiNamesJA+","+detailsJA+","+professorJA+"]"; //Put both objects in an array of 2 elements
+				response.getWriter().write(allJSON);
+			}
+			else if (purpose.equals("Assistantship")) {
+				JSONArray jobsJA = dao.getJobsJA(instiNamesJASorted, programme, field);
+				response.setContentType("application/json");
+				String allJSON = "["+instiNamesJA+","+detailsJA+","+jobsJA+"]"; //Put both objects in an array of 2 elements
+				response.getWriter().write(allJSON);
+			}
+			
+			
 		} 
 		catch (SQLException e) {e.printStackTrace();} 
 		catch (JarException e) {e.printStackTrace();} catch (JSONException e) {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="./../admission/amazonFilter.css">
+  <link rel="stylesheet" href="./../libraries/jquery-ui-1.12.1/jquery-ui.css">
+  <link rel="stylesheet" href="./../libraries/jquery-ui-1.12.1/jquery-ui.structure.css">
+  <link rel="stylesheet" href="./../libraries/jquery-ui-1.12.1/jquery-ui.theme.css">
+  <script type="text/javascript" src="./../libraries/jquery-3.4.1.js"></script>
+  <script src="./../libraries/jquery-ui-1.12.1/jquery-ui.js"></script>
+  
+</head>
+<body>
+
+    <p class="params">LOOKING FOR?</p>
+    <select id="purpose-dropdown" name="purpose-dropdown">
+      <option value="admission">Admission</option>
+      <option value="internship">Internship</option>
+      <option value="assistantship">Assistantship</option>
+    </select>
+
+    <p class="params">PROGRAMME</p>
+    <select id="programme-dropdown" name="programme-dropdown">    
+      <option value="All">All</option>
+    </select>
+    
+    <p class="params">FIELD</p>
+    <select id="field-dropdown" name="field-dropdown">
+      <option value="All">All</option>
+    </select>
+
+    <p class="params">DEGREE</p>
+    <select id="degree-dropdown" name="degree-dropdown">
+      <option value="All">All</option>
+    </select>
+    
+    <p class="params">FEES <span id="max"></span></p>
+    <div id="fees-range"></div>
+
+    <p class="params">INSTITUTE</p>
+    <input type="text" placeholder="Name of the Institute" id="institute">
+      
+    
+  <script src="./../common/constants.js"></script>
+  <script src="./../admission/amazonFilter.js"></script>
+
+</body>
+</html>

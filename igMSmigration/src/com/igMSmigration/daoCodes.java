@@ -51,10 +51,10 @@ public class daoCodes {
 	}		
 
 ///////////////////////// Fetches Basic Details of the Institutes (v2-ongoing) ///////////////
-	public JSONArray getDetailsJA(JSONArray instituteName, String sortType) throws JSONException, SQLException {
+	public JSONArray getDetailsJA(JSONArray instituteName, String sortType, int maxFee) throws JSONException, SQLException {
 		
 			JSONArray DetailsJA = new JSONArray();
-			String Query = queryConstants.getDetailsQueryJA(instituteName, sortType);
+			String Query = queryConstants.getDetailsQueryJA(instituteName, sortType, maxFee);
 			System.out.println(Query);
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(Query);
@@ -113,7 +113,36 @@ public class daoCodes {
 		System.out.println(allDegreeJA);
 		return allDegreeJA;		
 }
+	
+///////////////////////// Fetches in-depth details of the profs for internships (v2-ongoing) ////////////
+	public JSONArray getProfessorsJA(JSONArray instiNamesJASorted, String programme, String field) throws JSONException, SQLException {
+		
+			JSONArray professorsJA = new JSONArray();
+			String Query = queryConstants.getProfessorsQueryJA(instiNamesJASorted, programme, field);
+			System.out.println(Query);
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(Query);
+			ResultSetConverter rsc = new ResultSetConverter();
+			professorsJA = rsc.convert(rs);
+			System.out.println(professorsJA);
+			return professorsJA;	
+		
+	}
 
+///////////////////////// Fetches in-depth details of the Jobs for assistantships (v2-ongoing) ////////////
+	public JSONArray getJobsJA(JSONArray instiNamesJASorted, String programme, String field) throws JSONException, SQLException {
+		
+		JSONArray jobsJA = new JSONArray();
+		String Query = queryConstants.getJobsQueryJA(instiNamesJASorted, programme, field);
+		System.out.println(Query);
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(Query);
+		ResultSetConverter rsc = new ResultSetConverter();
+		jobsJA = rsc.convert(rs);
+		System.out.println(jobsJA);
+		return jobsJA;	
+	
+}
 
 }
 		

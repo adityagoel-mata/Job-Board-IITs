@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="./internshipFilter.css">
+  <script type="text/javascript" src="../libraries/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+
+    <p class="params">
+    LOOKING FOR?</p>
+    <select id="purpose-dropdown" name="purpose-dropdown">
+      <option value="admission">Admission</option>
+      <option value="internship" selected>Internship</option>
+      <option value="assistantship">Assistantship</option>
+    </select>
+
+    <p class="params">
+    PROGRAMME</p>
+    <select id="programme-dropdown" name="programme-dropdown">    
+      <option value="All">All</option>
+    </select>
+    
+    <p class="params">
+    FIELD</p>
+    <select id="field-dropdown" name="field-dropdown">
+      <option value="All">All</option>
+    </select>
+
+    <!-- <p class="params">
+    DEGREE</p>
+    <select id="degree-dropdown" name="degree-dropdown">
+      <option value="All">All</option>
+    </select> -->
+    
+    <!-- <p class="params">
+    FEES</p>
+    <input type="range" min="1" max="100" value="100" id="fees-range"> -->
+
+    <p class="params">
+    INSTITUTE</p>
+    <input type="text" placeholder="Name of the Institute" id="institute">
+      
+    
+  <script src="../common/constants.js"></script>
+  <script src="internshipFilter.js"></script>
+
+</body>
+</html>

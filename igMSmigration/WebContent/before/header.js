@@ -54,27 +54,30 @@ $(document).ready(function(){
   });
   
   function getResultFromField(programme, field){
+	var purpose = "admission";
     var programme = programme;
     var field = field;
     var degree = "All";
     var sortType = defaultSortType;
-    ajaxFunc(programme, field, degree, sortType);
+    ajaxFunc(purpose, programme, field, degree, sortType);
   }
   
   function getResultFromProgramme(programme){
+	  var purpose = "admission";
       var programme = programme;
       var field = "All";
       var degree = "All";
       var sortType = defaultSortType;
-      ajaxFunc(programme, field, degree, sortType);
+      ajaxFunc(purpose, programme, field, degree, sortType);
   }
   
   
-  function ajaxFunc(programme, field, degree, sortType){
+  function ajaxFunc(purpose, programme, field, degree, sortType){
     $.ajax({
       type: 'GET',
-      url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree,
+      url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?purpose=" + purpose +"&programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree,
       success: function(data){
+    	localStorage.setItem("purpose", purpose);
         localStorage.setItem("programme", programme);
         localStorage.setItem("field", field);
         localStorage.setItem("degree", decodeURIComponent(degree));

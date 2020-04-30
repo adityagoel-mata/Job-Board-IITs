@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+}
+select option[disabled] {
+  display: none;
+}

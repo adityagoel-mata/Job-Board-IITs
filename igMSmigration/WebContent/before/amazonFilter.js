@@ -151,9 +151,10 @@ $(document).ready(function(){
   });
 
   function ajaxFunc(programme, field, degree, sortType){
+	var purpose="admission";
     $.ajax({
       type: 'GET',
-      url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree,
+      url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?purpose=" + purpose + "&programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree,
       success: function(data){
         localStorage.setItem("programme", programme);
         localStorage.setItem("field", field);

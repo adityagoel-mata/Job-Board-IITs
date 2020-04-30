@@ -13,7 +13,7 @@
   border: solid 2px green;
   width: 180px;
 }
-#currency-option {
+#currency-dropdown {
   position: absolute;
   margin-top: 5px;
   margin-left: 230px;
@@ -82,20 +82,20 @@
   /* border: solid 0.1px green; */
 }
 
-.resultOne .name #prog1, .resultOne .name #prog2, .resultOne .name #prog3, .resultOne .name #prog4, .resultOne .name #prog5, .resultOne .name #prog6 {
+.resultOne .name #job0, .resultOne .name #job1, .resultOne .name #job2, .resultOne .name #job3, .resultOne .name #job4, .resultOne .name #job5, .resultOne .name #job6, .resultOne .name #job7, .resultOne .name #job8, .resultOne .name #job9 {
   width: 30%;
   height: 30px;
   margin-left: 15px;
   margin-top: 10px;
   /* border: solid 1px green; */
 }
-.profDetails {
+.topicDetails {
   border: solid 0.1px green;
   width: 100%;
   height: 10%;
   margin-top: 0px;
 }
-.profDetails .researchInterests {
+.topicDetails .topic {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 5px;
@@ -103,17 +103,18 @@
 }
 
 .name #links {
-  margin-top: -105px;
+  /* margin-top: -105px; */
   /* border: solid 0.1px green; */
 
 }
-.resultOne .name #links1, .resultOne .name #links2, .resultOne .name #links3, .resultOne .name #links4, .resultOne .name #links5, .resultOne .name #links6  {
+
+.resultOne .name #links0, .resultOne .name #links1, .resultOne .name #links2, .resultOne .name #links3, .resultOne .name #links4, .resultOne .name #links5, .resultOne .name #links6, .resultOne .name #links7, .resultOne .name #links8 {
   width: 30%;
   height: 30px;
   margin-top: 10px;
   margin-left: 15px;
   /* border: solid 0.1px green; */
-  opacity: 0;
+  opacity: 1;
 }
 
 
@@ -139,14 +140,14 @@
   vertical-align: top;
 }
 
-.resultOne .feesAndOthers #tuitionFeesLabel {
+.feesAndOthers #durationLabel, .feesAndOthers #stipendLabel, .feesAndOthers #deadlineLabel {
   margin-top: 0px;
   padding-left: 20px;
   font-size: x-large;
   margin-bottom: 0px;
   color: red;
 }
-.resultOne .feesAndOthers #tuitionFeesValue {
+.feesAndOthers #durationValue, .feesAndOthers #stipendValue, .feesAndOthers #deadlineValue {
   color: red;
   margin-top: 0px;
   padding-left: 20px;

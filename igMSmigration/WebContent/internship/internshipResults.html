@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+  <link rel="stylesheet" href="./internshipResults.css">
+  <script type="text/javascript" src="../libraries/jquery-3.4.1.js"></script>
+  
+</head>
+<body>
+
+    
+    <div class="sortstrip">
+      <select id="sorting-option" name="sorting-option">
+
+        <option value="NIRF">NIRF Overall Ranking</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Fees">Fees (Low to High)</option>
+      </select>
+      <select id="currency-dropdown" name="currency-dropdown">
+      </select>
+    </div>
+  
+    <div class="sorted">
+      <p id="searchResultsLabel">SEARCH RESULTS</p> <br>
+    </div>
+
+    <div class="allResults">               
+    </div>
+
+    <script src="./internshipResults.js"></script>
+    <script>
+    $(document).ready(function(){
+      $(".researchInterests").hide();
+    });
+      </script>
+  
+</body>
+</html>
