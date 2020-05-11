@@ -30,7 +30,9 @@ $(document).ready(function(){
   $("#sorting-option").change(function(){
     sortType = $("#sorting-option option:selected").text();
     var filters = [purpose, programme, field, degree, sortType, currencySelected, currencyRatio, maxFee];  
-    ajaxFunc(filters);
+    //ajaxFunc(filters);
+    ajaxFuncFilter(filters);
+
   });
 
   $("#currency-dropdown").change(function(){

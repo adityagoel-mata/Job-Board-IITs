@@ -66,3 +66,41 @@ function ajaxFunc(filters){
     }
   })
 }
+
+
+function ajaxFuncFilter(filters){
+  var purpose = filters[0];
+  var programme = filters[1];
+  var field = filters[2];
+  var degree = filters[3];
+  var sortType = filters[4];
+  var currencySelected = filters[5];
+  var currencyRatio = filters[6];
+  var maxFee = filters[7];
+  
+  $.ajax({
+    type: 'GET',
+    url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?purpose=" + purpose +"&programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree +"&maxFee=" + maxFee,
+    success: function(data){
+      localStorage.setItem("purpose", purpose);
+      localStorage.setItem("programme", programme);
+      localStorage.setItem("field", field);
+      localStorage.setItem("degree", decodeURIComponent(degree));
+      localStorage.setItem("sortType", sortType);
+      localStorage.setItem("currencySelected", currencySelected);
+      localStorage.setItem("currencyRatio", currencyRatio);
+      localStorage.setItem("maxFee", maxFee);
+      localStorage.setItem("data", JSON.stringify(data));
+
+      if(purpose=="Admission"){
+        $(".amazonSearchHTML").load('./../admission/amazonSearch.html');
+      }
+      else if(purpose=="Internship"){
+        $(".internshipSearchHTML").load('./../internship/internshipSearch.html');
+      }
+      else if(purpose=="Assistantship"){
+        $(".assistantshipSearchHTML").load('./../assistantship/assistantshipSearch.html');
+      }
+    }
+  })
+}

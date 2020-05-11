@@ -85,6 +85,8 @@ $(document).ready(function(){
       var field= $("#field-dropdown option:selected").text();
       var filters = [purpose, programme, field, "All", sortType, currencySelected, currencyRatio, maxFee];
       ajaxFunc(filters);
+      // ajaxFuncFilter(filters);
+
     });
     
     /* Case 2: Redirected after change event on Pragramme filter and result request sent by amazonFilter.js*/
@@ -92,7 +94,9 @@ $(document).ready(function(){
       var purpose= $("#purpose-dropdown option:selected").text();
       var programme= $("#programme-dropdown option:selected").text();
       var filters = [purpose, programme, "All", "All", sortType, currencySelected, currencyRatio, maxFee];
-      ajaxFunc(filters);
+      // ajaxFunc(filters);
+      ajaxFuncFilter(filters);
+
     });
     
   
@@ -103,7 +107,9 @@ $(document).ready(function(){
       var programme= $("#programme-dropdown option:selected").text();
       var field= $("#field-dropdown option:selected").text();
       var filters = [purpose, programme, field, "All", sortType, currencySelected, currencyRatio, maxFee];
-      ajaxFunc(filters);
+      // ajaxFunc(filters);
+      ajaxFuncFilter(filters);
+
     });  
   
     var dataJA2 = JSON.parse(data);

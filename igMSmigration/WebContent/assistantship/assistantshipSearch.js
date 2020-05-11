@@ -1,4 +1,4 @@
 $(document).ready(function(){
-  $(".assistantshipFilterHTML").load('./assistantshipFilter.html');
-  $(".assistantshipResultsHTML").load('./assistantshipResults.html');
+  $(".assistantshipFilterHTML").load('./../assistantship/assistantshipFilter.html');
+  $(".assistantshipResultsHTML").load('./../assistantship/assistantshipResults.html');
 });
