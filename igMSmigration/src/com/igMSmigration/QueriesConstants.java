@@ -100,7 +100,7 @@ public class QueriesConstants {
 			Query += "SELECT" + everything + ", " + Integer.toString(instiNamesJASorted.length()-1) + " as ord FROM public.\"prof " + instiNamesJASorted.getJSONObject(instiNamesJASorted.length()-1).getString("institute").trim() + "\" WHERE \"field\"= '" + field + "' AND \"offeringInternship\" = TRUE ";
 			Query += "ORDER BY ord;";
 		}
-		else if (!programme.equals("All") && field.equals("All")) { //for returning empty array purposefully
+		else { //for returning empty array purposefully
 			Query += "SELECT" + everything + ", 1 as ord FROM public.\"prof IIT Gandhinagar\" WHERE \"programme\"= 'All' ;";
 		}
 		return Query;

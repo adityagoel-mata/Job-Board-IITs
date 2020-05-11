@@ -128,6 +128,14 @@ $(document).ready(function(){
     $("#field-dropdown option:contains("+field+")").attr('selected', true);
     $("#degree-dropdown option[value=\""+degree+"\"]").attr('selected', true);
         
+    $("#purpose-dropdown").change(function(){
+      var purpose= $("#purpose-dropdown option:selected").text();
+      var programme= $("#programme-dropdown option:selected").text();
+      var field= $("#field-dropdown option:selected").text();
+      var filters = [purpose, programme, field, "All", sortType, currencySelected, currencyRatio, maxFee];
+      ajaxFunc(filters);
+    });
+    
     /* Case 2: Redirected after change event on Pragramme filter and result request sent by amazonFilter.js*/
     $("#programme-dropdown").change(function(){
       var purpose= $("#purpose-dropdown option:selected").text();

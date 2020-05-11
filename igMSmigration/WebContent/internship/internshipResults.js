@@ -1,14 +1,16 @@
 $(document).ready(function(){
+
   var purpose = localStorage.getItem("purpose");
   var programme = localStorage.getItem("programme");
   var field = localStorage.getItem("field");
-  var degree = localStorage.getItem("degree");
+  var degree = localStorage.getItem("degree", degree);
   var data = localStorage.getItem("data");
   var sortType = localStorage.getItem("sortType");
   var dataJA = JSON.parse(data);
   console.log(dataJA);
   var currencySelected = localStorage.getItem("currencySelected");
-  var currencyRatio = localStorage.getItem("currencyRatio", currencyRatio);
+  var currencyRatio = localStorage.getItem("currencyRatio");
+  var maxFee = localStorage.getItem("maxFee");
   
 /////////////////////////////// Framing the HTML Static Objects //////////////////////////////////////////
 currencyDropdownOptionsAppend(currency);
@@ -25,9 +27,10 @@ function currencyDropdownOptionsAppend(currencyArray){
 
  ////////////////////////////// sorting and currency Onchange Calls ////////////////////////////////////////
  $("#sorting-option").change(function(){
-    sortType = $("#sorting-option option:selected").text();
-    ajaxFunc(purpose, programme, field, degree, sortType);
-  });
+  sortType = $("#sorting-option option:selected").text();
+  var filters = [purpose, programme, field, degree, sortType, currencySelected, currencyRatio, maxFee];  
+  ajaxFunc(filters);
+});
 
   $("#currency-dropdown").change(function(){
     var currencySelected = $("#currency-dropdown option:selected").text();
@@ -142,22 +145,5 @@ function currencyDropdownOptionsAppend(currencyArray){
 	  })(i);
 	}
 
-	function ajaxFunc(purpose, programme, field, degree, sortType){
-	  $.ajax({
-	    type: 'GET',
-	    url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?purpose=" + purpose+ "&programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree,
-	    success: function(data){
-        localStorage.setItem("purpose", purpose);
-	      localStorage.setItem("programme", programme);
-	      localStorage.setItem("field", field);
-	      localStorage.setItem("degree", decodeURIComponent(degree));
-	      localStorage.setItem("sortType", sortType);
-	      localStorage.setItem("data", JSON.stringify(data));
-	      window.location.href = './internshipUsingLoop.html';
-	    }
-	  })
-	}
-
-
-
+  
 	});

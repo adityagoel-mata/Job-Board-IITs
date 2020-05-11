@@ -10,6 +10,7 @@ $(document).ready(function(){
   console.log(dataJA);
   var currencySelected = localStorage.getItem("currencySelected");
   var currencyRatio = localStorage.getItem("currencyRatio", currencyRatio);
+  var maxFee = localStorage.getItem("maxFee");
   
 /////////////////////////////// Framing the HTML Static Objects //////////////////////////////////////////
 currencyDropdownOptionsAppend(currency);
@@ -26,9 +27,10 @@ function currencyDropdownOptionsAppend(currencyArray){
 
  ////////////////////////////// sorting and currency Onchange Calls ////////////////////////////////////////
  $("#sorting-option").change(function(){
-    sortType = $("#sorting-option option:selected").text();
-    ajaxFunc(purpose, programme, field, degree, sortType);
-  });
+  sortType = $("#sorting-option option:selected").text();
+  var filters = [purpose, programme, field, degree, sortType, currencySelected, currencyRatio, maxFee];  
+  ajaxFunc(filters);
+});
 
   $("#currency-dropdown").change(function(){
     var currencySelected = $("#currency-dropdown option:selected").text();
@@ -84,7 +86,8 @@ function currencyDropdownOptionsAppend(currencyArray){
   var allProfessors = dataJA[2].length;
 	for (var i=0; i<allProfessors; i++){
 	  (function(i){
-      $("#job"+i).hover(function(){
+		var name = $("#job"+i).text();
+	    $("#job"+i).hover(function(){
       $("#instiPhoto"+i).hide();
       $("#topic"+i).show();
 	     },
@@ -96,23 +99,4 @@ function currencyDropdownOptionsAppend(currencyArray){
 	  })(i);
 	}
   
-
-	function ajaxFunc(purpose, programme, field, degree, sortType){
-	  $.ajax({
-	    type: 'GET',
-	    url: "http://localhost:8086/igMSmigration/SortServiceUsingLoop?purpose=" + purpose+ "&programme=" + programme +"&field=" + field +"&sortType=" + sortType + "&degree=" + degree,
-	    success: function(data){
-        localStorage.setItem("purpose", purpose);
-	      localStorage.setItem("programme", programme);
-	      localStorage.setItem("field", field);
-	      localStorage.setItem("degree", decodeURIComponent(degree));
-	      localStorage.setItem("sortType", sortType);
-	      localStorage.setItem("data", JSON.stringify(data));
-	      window.location.href = './assistantshipUsingLoop.html';
-	    }
-	  })
-	}
-
-
-
-	});
+});
